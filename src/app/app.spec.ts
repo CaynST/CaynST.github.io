@@ -1,6 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { App } from './app';
+import { Header } from './header/header';
+import { WorkExperience } from './work-experience/work-experience';
+import { Education } from './education/education';
+import { Skills } from './skills/skills';
+import { Certificates } from './certificates/certificates';
+import { Languages } from './languages/languages';
+import { Interests } from './interests/interests';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -9,7 +16,14 @@ describe('App', () => {
         RouterModule.forRoot([])
       ],
       declarations: [
-        App
+        App,
+        Header,
+        WorkExperience,
+        Education,
+        Skills,
+        Certificates,
+        Languages,
+        Interests,
       ],
     }).compileComponents();
   });
@@ -20,10 +34,10 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render header component', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, newcv');
+    expect(compiled.querySelector('app-header')).toBeTruthy();
   });
 });
