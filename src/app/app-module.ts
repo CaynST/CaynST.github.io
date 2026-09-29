@@ -10,6 +10,9 @@ import { Skills } from './skills/skills';
 import { Certificates } from './certificates/certificates';
 import { Languages } from './languages/languages';
 import { Interests } from './interests/interests';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,7 @@ import { Interests } from './interests/interests';
     Languages,
     Interests,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig)],
   bootstrap: [App],
 })
 export class AppModule {}
