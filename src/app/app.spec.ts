@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
+import { of } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { App } from './app';
 import { Header } from './header/header';
 import { WorkExperience } from './work-experience/work-experience';
@@ -24,6 +26,12 @@ describe('App', () => {
         Certificates,
         Languages,
         Interests,
+      ],
+      providers: [
+        {
+          provide: AngularFirestore,
+          useValue: { collection: () => ({ snapshotChanges: () => of([]) }) },
+        },
       ],
     }).compileComponents();
   });

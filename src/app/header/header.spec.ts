@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { Header } from './header';
+
+const firestoreStub = {
+  collection: () => ({ snapshotChanges: () => of([]) }),
+};
 
 describe('Header', () => {
   let component: Header;
@@ -9,6 +15,7 @@ describe('Header', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [Header],
+      providers: [{ provide: AngularFirestore, useValue: firestoreStub }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Header);
