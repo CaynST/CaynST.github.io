@@ -7,7 +7,7 @@ import { Interests } from '../../models/interests/interests.model';
 })
 export class InterestsService {
 
-	private dbPath = '/interests';
+	private dbPath = '/interest';
 
 	interestsRef: AngularFirestoreCollection<Interests>;
 

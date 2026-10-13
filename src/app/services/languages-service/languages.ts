@@ -7,7 +7,7 @@ import { Languages } from '../../models/languages/languages.model';
 })
 export class LanguagesService {
 
-	private dbPath = '/languages';
+	private dbPath = '/language';
 
 	languagesRef: AngularFirestoreCollection<Languages>;
 
