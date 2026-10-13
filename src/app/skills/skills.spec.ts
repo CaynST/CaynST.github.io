@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { Skills } from './skills';
+
+const firestoreStub = {
+  collection: () => ({ snapshotChanges: () => of([]) }),
+};
 
 describe('Skills', () => {
   let component: Skills;
@@ -9,6 +15,7 @@ describe('Skills', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [Skills],
+      providers: [{ provide: AngularFirestore, useValue: firestoreStub }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Skills);

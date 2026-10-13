@@ -1,2 +1,9 @@
-<p>education works!</p>
-<p>{{educationService.accesoEducation}}</p>
+<ul *ngFor="let item of education;">
+	<li>
+		<b>{{item.title}}</b><br>
+		<i>{{item.school}}</i><br>
+		<i>{{item.location}}</i><br>
+		{{item.startDate}} - {{item.endDate}}<br>
+		{{item.description}}
+	</li>
+</ul>

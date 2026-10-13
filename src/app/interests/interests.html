@@ -1,2 +1,6 @@
-<p>interests works!</p>
-<p>{{interestsService.accesoInterests}}</p>
+<ul *ngFor="let item of interests;">
+	<li>
+		<b>{{item.name}}</b><br>
+		<i>{{item.description}}</i>
+	</li>
+</ul>

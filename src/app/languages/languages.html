@@ -1,2 +1,6 @@
-<p>languages works!</p>
-<p>{{languagesService.accesoLanguages}}</p>
+<ul *ngFor="let item of languages;">
+	<li>
+		<b>{{item.language}}</b><br>
+		<i>{{item.level}}</i>
+	</li>
+</ul>

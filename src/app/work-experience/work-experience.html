@@ -1,2 +1,9 @@
-<p>work-experience works!</p>
-<p>{{workExperienceService.accesoWorkExperience}}</p>
+<ul *ngFor="let item of workExperience;">
+	<li>
+		<b>{{item.position}}</b><br>
+		<i>{{item.company}}</i><br>
+		<i>{{item.location}}</i><br>
+		{{item.startDate}} - {{item.endDate}}<br>
+		{{item.accomplishment}}
+	</li>
+</ul>

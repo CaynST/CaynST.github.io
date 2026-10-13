@@ -1,2 +1,7 @@
-<p>skills works!</p>
-<p>{{skillsService.accesoSkills}}</p>
+<ul *ngFor="let item of skills;">
+	<li>
+		<b>{{item.skill}}</b><br>
+		<i>{{item.category}}</i><br>
+		{{item.level}}
+	</li>
+</ul>
