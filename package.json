@@ -41,5 +41,11 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.8.1",
     "typescript": "~5.5.4"
+  },
+  "overrides": {
+    "chokidar": "3.6.0",
+    "readdirp": "3.6.0",
+    "glob-parent": "5.1.2",
+    "picomatch": "2.3.2"
   }
 }
