@@ -30,4 +30,15 @@ export class Skills {
         console.log(this.skills);
       });
   }
+
+  getLevelPercent(level?: string): number {
+    if (!level) {
+      return 0;
+    }
+    const value = parseInt(level.split('/')[0], 10);
+    if (isNaN(value)) {
+      return 0;
+    }
+    return Math.max(0, Math.min(100, value));
+  }
 }
